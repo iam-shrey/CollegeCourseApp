@@ -1,0 +1,17 @@
+version: '4.34.2'
+services:
+  db:
+    image: mysql:8.0
+    container_name: collegeapp
+    environment:
+      MYSQL_ROOT_PASSWORD: dummypassword
+      MYSQL_DATABASE: collegedb
+      MYSQL_USER: college-course
+      MYSQL_PASSWORD: dummy
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+
+volumes:
+  db-data:
